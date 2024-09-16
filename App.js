@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import react,{Component} from 'react';
+import {View, Text, Image} from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+class App extends Component{
+  render(){
+    return(
+      <View>
+        <Text>Olá Mundo</Text>
+        <Text style={{
+         color:'red',//cor
+         fontSize:25,//tamanho
+         margin:15,
+         fontWeight:'bold',//Negrito
+         fontStyle:'italic',//italico
+         fontFamily:'Arial',//fonte
+         textAlign:'center',//centralizar
+         lineHeight:35,//define a altura
+         letterSpacing:2,//espaçamento entre as letras,
+         textDecorationLine:'underline',//sublinhado
+         textDecorationStyle:'dotted',//estilo do sublinhado
+         textTransform:'uppercase',//letra maiuscula
+        }}>Aula de Mobile</Text>
+        <Image source={{uri:'https://sujeitoprogramador.com/steve.png'}}
+        style={{width:300, height:300, marginBottom:20}}></Image>
+
+        <Image source={require('./assets/bill.jpg')}
+        style={{width:300, height:300}}></Image>
+      </View>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
